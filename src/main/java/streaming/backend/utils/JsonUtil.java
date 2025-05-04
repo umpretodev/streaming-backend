@@ -10,4 +10,8 @@ public class JsonUtil {
     public static String toJson(Object object) throws JsonProcessingException {
         return mapper.writeValueAsString(object);
     }
+
+    public static <T> T toObject(String json, Class<T> clazz) throws JsonProcessingException {
+        return mapper.readValue(json, clazz);
+    }
 }
